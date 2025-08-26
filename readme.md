@@ -23,10 +23,7 @@ This is a powershell script that automatically installs and configures all the s
 
 You must restart your computer after the script is complete, please save all work and close all apps before running the script.
 
-1. Download the required file
-    1. Click 2025 release in the sidebar
-    2. Download 2338 Automated Setup 2025
-       NOTE: This is a very large download (5GB), it will take a long time and is not reccomended on school wifi.
+1. Download the required file from [Google Drive](https://drive.google.com/file/d/1h1omZl-5aztTXE5eee9PJXVZr0BpG1i4/view?usp=sharing)
 2. Extract the zip file
     1. Right click the file and click "Extract All"
 3. Double click the file named "RUN ME"
@@ -38,7 +35,7 @@ You must restart your computer after the script is complete, please save all wor
 
 I have not tested this script ever to update computers, as that is much easier to do manually than starting from scratch. I would highly recommend testing extensivly before using it to update existing installations.
 
-It is important to refrain from uploading installers to Github. Once you have the script working, zip it and distribute it via the releases section in the sidebar. Push only the script file and the configuration files. I also chose to hide all the files except for "RUN ME.bat"
+It is important to refrain from uploading installers to Github. Once you have the script working, zip it and distribute it via Google Drive (it will be too big to upload with github releases). Push only the script file and the configuration files. I also chose to hide all the files except for "RUN ME.bat" (right click, properties, check "hidden").
 
 ### Step 1 - IntelliJ
 
@@ -73,3 +70,4 @@ This step begins with configuring Driver Station because the installer restarts 
 After the file is copied, the ISO is Mounted, and the installer is run. The script does dismount the ISO after the install is completed, but the user should have clicked "Restart Now" at the end of the installer, so theoretically that part never runs.
 
 The 2026 season will be the last that Driver Station will be used. Hopefully there is enough example code to adapt to the new limelight controller software when it comes out.
+
