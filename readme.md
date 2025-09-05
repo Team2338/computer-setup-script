@@ -23,7 +23,7 @@ This is a powershell script that automatically installs and configures all the s
 
 You must restart your computer after the script is complete, please save all work and close all apps before running the script.
 
-1. Download the required file from [Google Drive](https://drive.google.com/file/d/1h1omZl-5aztTXE5eee9PJXVZr0BpG1i4/view?usp=sharing)
+1. Download the required file from [Google Drive](https://drive.google.com/file/d/1tpSuxuOwQk-SnElezpJv7tP_wM2AD73A/view?usp=drive_link)
 2. Extract the zip file
     1. Right click the file and click "Extract All"
 3. Double click the file named "RUN ME"
@@ -51,9 +51,9 @@ This is the simplest of the installations, all it does is run the installer. To 
 
 ### Step 3 - WPILib
 
-To increment the version, replace the WPILib iso, update the filename, and update the installation directory (usually just changing the year). The script assumes that the executable is called `WPILibInstaller.exe` and is located at the root of the ISO.
+To increment the version download the new WPILib version, mount the iso, and copy the contents into the `WPILib` folder. Next update the installation directory configured in the script (usually just changing the year). The script assumes that the executable is called `WPILibInstaller.exe` and is located in the `WPILib` folder.
 
-This step has several parts. First we have to mount the ISO, then obtain its drive letter. Once we have that, we can run the installer. Once the installer is complete, we can setup the java install. The script assumes that the WPILib java install is in a folder called `java` at the root of the installation directory.
+This step has several parts. First we run the installer. Once the installer is complete, we can setup the java install. The script assumes that the WPILib java install is in a folder called `java` at the root of the installation directory.
 
 The WPILib Java install is used by creating a symlink into the program files. The PATH is based off of JAVA_HOME which is based off of the symlink. I decided to create the symlink instead of pointing the `JAVA_HOME` directly to the wpilib installation folder to aid someone unfamilar with the script in troubleshooting in the future.
 
@@ -70,4 +70,3 @@ This step begins with configuring Driver Station because the installer restarts 
 After the file is copied, the ISO is Mounted, and the installer is run. The script does dismount the ISO after the install is completed, but the user should have clicked "Restart Now" at the end of the installer, so theoretically that part never runs.
 
 The 2026 season will be the last that Driver Station will be used. Hopefully there is enough example code to adapt to the new limelight controller software when it comes out.
-

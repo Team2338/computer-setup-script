@@ -8,7 +8,6 @@ $intellij_config_folder = "$($env:appdata)\JetBrains\IdeaIC2025.1"
 
 $gitkraken_installer = "GitKrakenSetup.exe"
 
-$wpilib_iso = "WPILib_Windows-2025.3.2.iso"
 $wpilib_directory = "C:\Users\Public\wpilib\2025"
 
 $gametools_installer = "game-tools_25.0.1.iso"
@@ -111,15 +110,10 @@ if($wpilib) {
 		
 	} While (!$wpilibConfirm)
 	#Install wpilib
-	$wpiIsoPath = RelativePath $wpilib_iso
-	$wpiDiskImage = Mount-DiskImage -ImagePath $wpiIsoPath -PassThru
-	$wpiVolume = Get-Volume -DiskImage $wpiDiskImage
-	$wpiDriveLetter = $wpiVolume.DriveLetter
-	Write-Host "WPILib ISO Mounted"
 	Write-Host "Installing WPILib"
-	Start-Process "$($wpiDriveLetter):\WPILibInstaller.exe" -Wait
-	Dismount-DiskImage -ImagePath $wpiIsoPath
-	Write-Host "WPILib ISO Dismounted"
+	$wpiPath = RelativePath "WPILib\WPILibInstaller.exe"
+	Unblock-File -Path $wpiPath
+	Start-Process $wpiPath -Wait
 
 	Write-Host "Setting up java symlink"
 	New-Item -Path "C:\Program Files\" -Name "Java" -ItemType "Directory"
